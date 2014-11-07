@@ -7,7 +7,7 @@ function Poem(text, opts) {
         'coinflip'          : opts.coinflip          || function() { return Math.random() < 0.125; },
         'max_line_length'   : opts.max_line_length   || 6,
         'max_stanza_length' : opts.max_stanza_length || 5,
-        'indent'            : opts.indent            || '\t',
+        'indent'            : opts.indent            || '    ',
         'new_line'          : opts.new_line          || '\n',
         'new_stanza'        : opts.new_stanza        || '\n\n',
         'punctuation'       : !!opts.punctuation     || true
