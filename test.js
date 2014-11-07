@@ -1,0 +1,6 @@
+var Poem = require('./');
+var text= "Macho madness the madness is runnin' wild! rules? man ooooooh yeah! wrestling the same fire the dragon breathes. and your neck could be broken! hangman hulk hogan gorgeous george hulkamania atomic the madness is runnin' wild! oooooh yeeeah! the macho man is right here, and i'm gonna take it to the limit! ooooooh yeah! wrestling i'm the world wrestling federation champion and you're not. i want everybody to you're goin' nowhere! well rules were made to be broken. the macho man is right here, and i'm gonna take it to the limit! bonesaw's ready! ric flair hangman oooooh yeeeah! snake eyes macho snap into a slim jim! i want everybody to love it, or leave it. i'm the world wrestling federation champion and you're not. snake eyes elbow i'm the world wrestling federation champion and you're not. running wild drop diamond dallas page i've been everywhere from soaring with the eagles to slithering with the snakes. drop and your neck could be broken! and your neck could be broken! snap into a slim jim! i got'cha for three minutes! hulk hogan champion intercontinental champion i say i'm a million percent. that is better than a hundred percent! hey, freakshow!".replace(/\,\.\!/g, '');
+
+var p = new Poem(text, { punctuation: true });
+
+console.log(p.generate());
