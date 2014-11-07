@@ -10,7 +10,7 @@ function Poem(text, opts) {
         'indent'            : opts.indent            || '    ',
         'new_line'          : opts.new_line          || '\n',
         'new_stanza'        : opts.new_stanza        || '\n\n',
-        'punctuation'       : !!opts.punctuation     || true
+        'no_punctuation'    : opts.no_punctuation    || false
     };
   
     this.punctuation = {
@@ -39,7 +39,7 @@ Poem.prototype.generate = function generate() {
 }
 
 Poem.prototype._randomPunctuation = function randomPunctuation() {
-    if ( !this.options.punctuation ) { return; }
+    if ( this.options.no_punctuation ) { return ''; }
     var props = [];
     for ( var p in this.punctuation ) {
         props.push(p);
