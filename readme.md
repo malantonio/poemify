@@ -28,7 +28,11 @@ console.log(p.generate());
 ```
 
 ## (cli)
-use `-p` flag to include random punctuation
+use `-p` or `--punctuation` flag to include random punctuation
+use `-s` or `--stanza-length` to set stanza length
+use `-l` or `--line-length` to set line length
+use `-v` or `--variable-length` to switch variable stanza + line length
+use `-V` or `--version` to get the version number
 
 ```
 poemify masterpiece.txt

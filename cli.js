@@ -4,13 +4,17 @@ var argv = require('minimist')(process.argv.slice(2));
 var fs   = require('fs');
 var path = require('path');
 
-var opts = {
-    'no_punctuation': true
+var opts = {};
+
+if ( argv.V || argv['version'] ) {
+    console.log('Poemify, version ' + JSON.parse(fs.readFileSync('./package.json')).version);
+    process.exit();
 }
 
-if ( argv.p ) {
-    opts.no_punctuation = false;
-}
+if ( argv.p || argv['punctuation'] )    { opts.punctuation       = argv.p ? JSON.parse(argv.p) : JSON.parse(argv['punctuation']); }
+if ( argv.s || argv['stanza-length'])   { opts.max_stanza_length = argv.s ? JSON.parse(argv.s) : JSON.parse(argv['stanza-length']); }
+if ( argv.l || argv['line-length'])     { opts.max_line_length   = argv.l ? JSON.parse(argv.l) : JSON.parse(argv['line-length']); }
+if ( argv.v || argv['variable-length']) { opts.variable_length   = argv.v ? JSON.parse(argv.v) : JSON.parse(argv['variable-length']); }
 
 if ( !process.stdin.isTTY ) {
     var str = '';

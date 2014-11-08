@@ -10,7 +10,8 @@ function Poem(text, opts) {
         'indent'            : opts.indent            || '    ',
         'new_line'          : opts.new_line          || '\n',
         'new_stanza'        : opts.new_stanza        || '\n\n',
-        'no_punctuation'    : opts.no_punctuation    || false
+        'variable_length' : typeof opts.variable_length === 'undefined' ? true : opts.variable_length,
+        'punctuation' : typeof opts.punctuation === 'undefined' ? false : opts.punctuation
     };
   
     this.punctuation = {
@@ -64,7 +65,11 @@ Poem.prototype._stanzaLength = function stanzaLength() {
 }
 
 Poem.prototype._makeLine = function makeline() {
-    var line = [], i = 0, line_length = this._lineLength();
+    var line = []
+      , i = 0
+      , line_length = this.options.variable_length 
+                    ? this._lineLength() 
+                    : this.options.max_line_length;
 
     while ( i < line_length && this._counter < this.corpus_len ) {
         line.push('' + this.corpus[this._counter++] + (this.options.coinflip() ? this._randomPunctuation() : ''));
@@ -75,7 +80,12 @@ Poem.prototype._makeLine = function makeline() {
 }
 
 Poem.prototype._makeStanza = function makeStanza() {
-    var stanza = [], i = 0, stanza_length = this._stanzaLength();
+    var stanza = []
+      , i = 0
+      , stanza_length = this.options.variable_length 
+                      ? this._stanzaLength() 
+                      : this.options.max_stanza_length
+        ;
 
     while ( i < stanza_length && this._counter < this.corpus_len ) {
         stanza.push( '' + (this.options.coinflip() ? this.options.indent : '') + this._makeLine() )
