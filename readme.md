@@ -16,6 +16,10 @@ punctuation
 ```
 
 ## usage
+```
+npm install poemify
+```
+add `-g` flag if you want to use globally
 
 ```js
 var Poem = require('poemify');
