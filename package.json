@@ -1,0 +1,31 @@
+{
+  "name": "poemify",
+  "version": "1.0.0",
+  "description": "Arbitrarily generate poetry w/ a body of text",
+  "main": "index.js",
+  "dependencies": {
+    "minimist": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "poetry",
+    "art",
+    "generator"
+  ],
+  "author": "Adam Malantonio",
+  "license": "MIT",
+  "bin": {
+    "poemify": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/malantonio/poemify"
+  },
+  "bugs": {
+    "url": "https://github.com/malantonio/poemify/issues"
+  },
+  "homepage": "https://github.com/malantonio/poemify"
+}
