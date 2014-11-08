@@ -28,19 +28,16 @@ console.log(p.generate());
 ```
 
 ### options ###
-
 poemify takes in an object of options:
 
-option              |   type   | description
---------------------------------------------------------------------------------------------
-`coinflip`          | function | callback to determine random functions (must return boolean)
-`indent`            |  string  | characters to use as indentation
-`max_line_length`   |  number  | number of words in a line
-`max_stanza_length` |  number  | number of lines in a stanza
-`new_line`          |  string  | character to use for new line
-`new_stanza`        |  string  | character(s) to block into new stanza
-`punctuation`       | boolean  | insert randomized punctuation?
-`variable_length`   | boolean  | should lines + stanzas have differing word/line lengths?
+* `coinflip`  (function) - callback to determine random functions (must return boolean)
+* `indent` (string) - characters to use as indentation
+* `max_line_length` (number) - number of words in a line
+* `max_stanza_length` (number) - number of lines in a stanza
+* `new_line` (string) - character to use for new line
+* `new_stanza` (string) - character(s) to block into new stanza
+* `punctuation` (boolean) - insert randomized punctuation?
+* `variable_length` (boolean) - should lines + stanzas have differing word/line lengths?
 
 ## (cli) ##
 use `-p` or `--punctuation` flag to include random punctuation
