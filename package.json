@@ -1,6 +1,6 @@
 {
   "name": "poemify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Arbitrarily generate poetry w/ a body of text",
   "main": "index.js",
   "dependencies": {

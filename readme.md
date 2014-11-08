@@ -24,6 +24,8 @@ console.log(p.generate());
 ```
 
 ## (cli)
+use `-p` flag to include random punctuation
+
 ```
 poemify masterpiece.txt
 >> masterpiece poem
