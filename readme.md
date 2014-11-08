@@ -43,11 +43,11 @@ option              |   type   | description
 `variable_length`   | boolean  | should lines + stanzas have differing word/line lengths?
 
 ## (cli) ##
-use `-p` or `--punctuation` flag to include random punctuation
-use `-s` or `--stanza-length` to set stanza length
-use `-l` or `--line-length` to set line length
-use `-v` or `--variable-length` to switch variable stanza + line length
-use `-V` or `--version` to get the version number
+* use `-p` or `--punctuation` flag to include random punctuation
+* use `-s` or `--stanza-length` to set stanza length
+* use `-l` or `--line-length` to set line length
+* use `-v` or `--variable-length` to switch variable stanza + line length
+* use `-V` or `--version` to get the version number
 
 ```
 poemify masterpiece.txt
