@@ -43,7 +43,6 @@ Poem.prototype.generate = function generate() {
 }
 
 Poem.prototype._randomPunctuation = function randomPunctuation() {
-    if ( this.options.no_punctuation ) { return ''; }
     var props = [];
     for ( var p in this.punctuation ) {
         props.push(p);
@@ -62,13 +61,20 @@ Poem.prototype._stanzaLength = function stanzaLength() {
 
 Poem.prototype._makeLine = function makeline() {
     var line = []
+      , word = ''
       , i = 0
       , line_length = this.options.variable_length 
                     ? this._lineLength() 
                     : this.options.max_line_length;
 
     while ( i < line_length && this._counter < this.corpus_len ) {
-        line.push('' + this.corpus[this._counter++] + (this.options.coinflip() ? this._randomPunctuation() : ''));
+        word = this.corpus[this._counter++];
+
+        if ( this.options.punctuation ) {
+            word += this.options.coinflip() ? this._randomPunctuation() + '';
+        }
+
+        line.push(word);
         i++;
     }
 
