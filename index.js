@@ -24,7 +24,7 @@ function Poem(text, opts) {
         'ellipsis'    : opts.ellipsis    || '…'
     };
     
-    this.corpus = text.replace(/\,\.\!\?\;\-\…\n\t/g, '').split(' ');
+    this.corpus = text.replace(/[,.!?;\-…\n\t]/g, '').split(' ');
     this.corpus_len = this.corpus.length
 
     this._counter = 0;
