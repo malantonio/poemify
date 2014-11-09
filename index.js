@@ -52,10 +52,6 @@ Poem.prototype._randomPunctuation = function randomPunctuation() {
     return this.punctuation[props[Math.floor(Math.random() * props.length)]];
 }
 
-Poem.prototype._coinflip = function coinflip() { 
-    return Math.random() < 0.125; 
-}
-
 Poem.prototype._lineLength = function linelength() { 
     return Math.ceil(Math.random() * this.options.max_line_length); 
 }
