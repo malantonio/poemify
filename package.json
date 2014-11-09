@@ -1,14 +1,16 @@
 {
   "name": "poemify",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Arbitrarily generate poetry w/ a body of text",
   "main": "index.js",
   "dependencies": {
     "minimist": "^1.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "^3.0"
+    },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "keywords": [
     "poetry",
