@@ -71,7 +71,7 @@ Poem.prototype._makeLine = function makeline() {
         word = this.corpus[this._counter++];
 
         if ( this.options.punctuation ) {
-            word += this.options.coinflip() ? this._randomPunctuation() + '';
+            word += this.options.coinflip() ? this._randomPunctuation() : '';
         }
 
         line.push(word);
